@@ -15,14 +15,15 @@ class IconNodeRenderer extends DefaultTreeCellRenderer {
 
 	private static final long serialVersionUID = 1L;
 
-	public Component getTreeCellRendererComponent(JTree tree, Object value, boolean sel, boolean expanded, boolean leaf, int row, boolean hasFocus) {
+	public Component getTreeCellRendererComponent(JTree tree, Object value, boolean sel, boolean expanded, boolean leaf,
+			int row, boolean hasFocus) {
 
 		super.getTreeCellRendererComponent(tree, value, sel, expanded, leaf, row, hasFocus);
 
 		Icon icon = ((IconNode) value).getIcon();
 
 		if (icon == null) {
-			Hashtable icons = (Hashtable) tree.getClientProperty("JTree.icons");
+			Hashtable<?, ?> icons = (Hashtable<?, ?>) tree.getClientProperty("JTree.icons");
 			String name = ((IconNode) value).getIconName();
 			if ((icons != null) && (name != null)) {
 				icon = (Icon) icons.get(name);
