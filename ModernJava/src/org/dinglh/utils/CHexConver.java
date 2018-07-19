@@ -1,4 +1,4 @@
-package pcclient;
+package org.dinglh.utils;
 
 /**
  * 16进制值与String/Byte之间的转换
